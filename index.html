@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./bootstrap.css" />
+    <title>Quran Memo</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Quran Memorization</h1>
+        <p>A place to memorize the holy book</p>
+      </header>
+      <!-- body -->
+      <div class="controls">
+        <label for="#select" id="select_surah">Select Surah</label>
+        <select id="select" class="form-control w-75"></select>
+        <div class="w-75 d-flex mt-3">
+            <input type="number" class="form-control w-50" id="verseNumber" placeholder="Verse Number">
+            <button class="btn btns px-4 ml-2 w-50" id="playBtn">Play Ayah</button>
+        </div>
+      </div>
+      <!-- second -->
+      <div class="controls">
+          <p id="arabic"></p>
+          <audio src="" id="audio"></audio>
+      </div>
+
+
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>

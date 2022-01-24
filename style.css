@@ -1,0 +1,83 @@
+:root{
+    --blue: "#111";
+    --primary: #61305D;
+    --secondary: #B45C6C;
+    --variant: #e67c7c;
+    --other: #f68679;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--secondary) !important;
+    color: white
+}
+
+
+main{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+     var(--primary)), url("quran.jpg");
+    padding: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30vh;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white !important;
+}
+
+header > h1{
+    font-size: 4rem;
+}
+
+header > p{
+    font-size: 1.5rem;
+}
+
+.controls{
+    margin-top: 20px;
+    background-color: var(--primary);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#select_surah{
+    font-size: 1.1rem;
+    color: #eee;
+}
+
+.btns{
+    background-color: var(--other) !important;
+    color: white !important;
+}
+
+#arabic{
+    color: var(--variant);
+    text-align: right;
+}
+
+@media screen and (max-width: 560px) {
+    header > h1{
+        font-size: 2rem;
+    }
+    
+    header > p{
+        font-size: 1.13rem;
+        color: #eee
+    }
+}
