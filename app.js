@@ -1,8 +1,12 @@
 // DOM ELEments
 const selectDOM = document.getElementById("select");
-const arabicText = document.getElementById("arabic");
 const playBtn = document.getElementById("playBtn");
+const repeat = document.getElementById("repeat");
 const verseNumber = document.getElementById("verseNumber");
+const english = document.getElementById("english");
+const trans = document.getElementById("trans");
+const next = document.getElementById("next");
+const arabicText = document.getElementById("arabic");
 const audio = document.getElementById("audio");
 // some useful variables
 let selectedSurah = 1;
@@ -15,6 +19,9 @@ const getSuraList = async () => {
     .then((data) => renderSuraList(data.data));
 };
 
+const nextSurah = async ()=>{
+  selectedSurah =  selectedSurah + 1;
+}
 
 const getAyaInfo = async () => {
     playBtn.disabled = true
@@ -24,6 +31,8 @@ const getAyaInfo = async () => {
     .then((response) => response.json())
     .then((data) => {
         arabicText.textContent = data.data.text.arab;
+        english.textContent = data.data.text.transliteration.en;
+        trans.textContent = data.data.translation?.en;
         audio.src = data.data.audio.primary;
         audio.play()
         playBtn.disabled = false
@@ -50,6 +59,8 @@ selectDOM.addEventListener('change', (e)=>{
 })
 
 playBtn.addEventListener("click", ()=>getAyaInfo())
+repeat.addEventListener("click", ()=>getAyaInfo())
+next.addEventListener("click", ()=>nextSurah())
 
 
 verseNumber.addEventListener("change", (e)=>{
